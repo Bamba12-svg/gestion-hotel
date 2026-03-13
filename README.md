@@ -1,59 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏨 Gestion Hôtel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Application web de gestion hôtelière développée dans le cadre du projet L3 Génie Logiciel.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-12-red?style=flat&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.5-blue?style=flat&logo=php)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple?style=flat&logo=bootstrap)
+![SQLite](https://img.shields.io/badge/SQLite-Database-green?style=flat&logo=sqlite)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Description
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Gestion Hôtel** est une application web complète permettant à un hôtel de gérer ses opérations quotidiennes : chambres, clients, réservations et facturation, le tout depuis une interface moderne et intuitive.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ✨ Fonctionnalités
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Module | Fonctionnalités |
+|--------|----------------|
+| 🔐 **Authentification** | Login / Logout sécurisé, middleware de protection |
+| 🛏️ **Chambres** | Ajouter, modifier, supprimer, filtrer par statut |
+| 👤 **Clients** | Gestion complète avec statut VIP automatique |
+| 📋 **Réservations** | Création avec sélection chambre, suivi des statuts |
+| 🧾 **Factures** | Génération automatique, impression PDF |
+| 📊 **Dashboard** | Statistiques en temps réel, taux d'occupation |
+| ⚙️ **Paramètres** | Modification profil, changement mot de passe |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🏗️ Architecture MVC
+```
+app/
+├── Http/Controllers/     # Contrôleurs (logique métier)
+│   ├── AuthController.php
+│   ├── ChambreController.php
+│   ├── ClientController.php
+│   ├── ReservationController.php
+│   └── FactureController.php
+├── Models/               # Modèles Eloquent (base de données)
+│   ├── Chambre.php
+│   ├── Client.php
+│   ├── Reservation.php
+│   └── Facture.php
+resources/
+└── views/                # Vues Blade (interface utilisateur)
+    ├── layouts/
+    ├── chambres/
+    ├── clients/
+    ├── reservations/
+    └── factures/
+```
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🗄️ Base de données
 
-## Contributing
+**6 tables :** `users`, `chambres`, `clients`, `reservations`, `factures`, `services`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🛠️ Stack Technique
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Backend :** Laravel 12, PHP 8.5
+- **Base de données :** SQLite
+- **Frontend :** Bootstrap 5.3 (CDN), CSS personnalisé
+- **Authentification :** Manuelle (sans package externe)
+- **ORM :** Eloquent Laravel
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🚀 Installation
+```bash
+# 1. Cloner le projet
+git clone https://github.com/Bamba12-svg/gestion-hotel.git
+cd gestion-hotel
 
-## License
+# 2. Installer les dépendances PHP
+composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 3. Copier le fichier d'environnement
+cp .env.example .env
+
+# 4. Générer la clé de l'application
+php artisan key:generate
+
+# 5. Créer la base de données SQLite (Windows)
+# Créer manuellement le fichier : database/database.sqlite
+
+# 6. Exécuter les migrations et le seeder
+php artisan migrate --seed
+
+# 7. Lancer le serveur
+php artisan serve
+```
+
+Ouvrir **http://127.0.0.1:8000**
+
+---
+
+## 🔑 Connexion
+
+| Champ | Valeur |
+|-------|--------|
+| Email | `admin@hotel.com` |
+| Mot de passe | `password` |
+
+---
+
+## 👨‍💻 Auteur
+
+**Bamba** — Étudiant L3 Génie Logiciel  
+🔗 [GitHub](https://github.com/Bamba12-svg)
+
+---
+
+## 📄 Licence
+
+Projet académique — L3 Génie Logiciel © 2026
